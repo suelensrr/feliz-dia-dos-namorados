@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cascata com Corações</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+      z-index: 2;
+    }
+
+    .coracoes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .coracao {
+      position: absolute;
+      color: rgba(255, 0, 100, 0.6);
+      font-size: var(--size);
+      left: var(--left);
+      animation: flutuar var(--duration) linear infinite;
+    }
+
+    @keyframes flutuar {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .cascata {
+      display: flex;
+      gap: 20px;
+      transform: rotate(-5deg);
+      z-index: 1;
+    }
+
+    .foto {
+      width: 150px;
+      height: 200px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      transform: rotate(var(--angle));
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .foto:hover {
+      transform: rotate(0deg) scale(1.1);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+<h1>Feliz Dia dos Namorados ❤️</h1>
+
+<div class="coracoes">
+  <div class="coracao" style="--size: 20px; --left: 10%; --duration: 8s;">❤️</div>
+  <div class="coracao" style="--size: 25px; --left: 30%; --duration: 10s;">❤️</div>
+  <div class="coracao" style="--size: 18px; --left: 50%; --duration: 12s;">❤️</div>
+  <div class="coracao" style="--size: 22px; --left: 70%; --duration: 9s;">❤️</div>
+  <div class="coracao" style="--size: 30px; --left: 85%; --duration: 11s;">❤️</div>
+  <div class="coracao" style="--size: 15px; --left: 20%; --duration: 7s;">❤️</div>
+  <div class="coracao" style="--size: 28px; --left: 60%; --duration: 13s;">❤️</div>
+</div> 
+
+
+<div class="cascata">
+  <div class="foto" style="--angle: -10deg;">
+    <img src="\Users\Dosuhra\Desktop\minha-pagina\src\foto 1.jpeg" alt="Foto 1">
+  </div>
+  <div class="foto" style="--angle: 8deg;">
+    <img src="\Users\Dosuhra\Desktop\minha-pagina\src\foto 2.jpeg" alt="Foto 2">
+  </div>
+  <div class="foto" style="--angle: -5deg;">
+    <img src="\Users\Dosuhra\Desktop\minha-pagina\src\foto 3.jpeg" alt="Foto 3">
+  </div>
+  <div class="foto" style="--angle: 12deg;">
+    <img src="\Users\Dosuhra\Desktop\minha-pagina\src\foto 4.jpeg" alt="Foto 4">
+  </div>
+</div>
+
+</body>
+</html>
+
