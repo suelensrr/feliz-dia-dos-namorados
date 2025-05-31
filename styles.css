@@ -1,77 +1,80 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: Arial, sans-serif;
-  background: #fff8f0;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
-}
+    body {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+      font-family: sans-serif;
+    }
 
-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
+    h1 {
+      font-size: 2.5em;
+      color: #fff;
+  text-shadow: 2px 2px rgb(231, 22, 22);
+      margin-bottom: 20px;
+      z-index: 2;
+    }
 
-header h1 {
-  font-size: 2.5em;
-  color: #d35400;
-}
+    .coracoes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
 
-header p {
-  font-size: 1.2em;
-  color: #7f8c8d;
-}
+    .coracao {
+      position: absolute;
+      color: rgba(255, 0, 100, 0.6);
+      font-size: var(--size);
+      left: var(--left);
+      animation: flutuar var(--duration) linear infinite;
+    }
 
-.menu {
-  max-width: 600px;
-  margin: 0 auto;
-}
+    @keyframes flutuar {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0.5);
+        opacity: 0;
+      }
+    }
 
-.menu h2 {
-  margin-top: 30px;
-  font-size: 1.8em;
-  color: #c0392b;
-  border-bottom: 2px solid #c0392b;
-  padding-bottom: 5px;
-}
+    .cascata {
+      display: flex;
+      gap: 20px;
+      transform: rotate(-5deg);
+      z-index: 1;
+    }
 
-.item {
-  background: #fff;
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
+    .foto {
+      width: 150px;
+      height: 200px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      transform: rotate(var(--angle));
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
 
-.item:hover {
-  transform: scale(1.02);
-}
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.item h3 {
-  font-size: 1.4em;
-  color: #e67e22;
-}
-
-.item p {
-  margin: 10px 0;
-  color: #555;
-}
-
-.item span {
-  font-weight: bold;
-  color: #27ae60;
-}
-
-footer {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 0.9em;
-  color: #7f8c8d;
-}
+    .foto:hover {
+      transform: rotate(0deg) scale(1.1);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
